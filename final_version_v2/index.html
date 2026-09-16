@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Ruba Sri Ladies Tailoring — custom ladies tailoring, designer blouses, bridal wear and alterations.">
+<title>Ruba Sri | Ladies Tailoring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div id="toast"></div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Ruba Sri home">
+        <span class="mark">RS</span>
+        <span>
+          <b>RUBA SRI</b>
+          <small>LADIES TAILORING</small>
+        </span>
+      </a>
+
+      <button class="hamb" id="hamb" aria-label="Open menu">☰</button>
+
+      <nav id="nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Portfolio</a>
+        <a href="#booking">Book</a>
+        <a href="#track">Track Order</a>
+        <button class="navbtn" type="button" onclick="openAdmin()">Admin</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Custom • Personal • Made to fit</span>
+          <h1>Your style.<br><em>Our stitching.</em></h1>
+          <p>Designer blouses, bridal wear, ladies tailoring and alterations — with personal attention from design discussion to final fitting.</p>
+
+          <div class="actions">
+            <a class="btn primary" href="#booking">Start an Enquiry</a>
+            <a class="btn ghost" id="waHero">WhatsApp Us ↗</a>
+          </div>
+
+          <div class="trust" aria-label="Highlights">
+            <span>✓ Custom designs</span>
+            <span>✓ Reference images</span>
+            <span>✓ Personal fitting</span>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Brand illustration">
+          <div class="hero-logo">RS</div>
+          <div class="hero-label">Your next outfit starts here.</div>
+          <div class="badge">
+            <b>20+</b>
+            <span>years of<br>tailoring</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="head">
+          <div>
+            <span class="eyebrow">What we offer</span>
+            <h2>Choose your service</h2>
+          </div>
+          <p>Every order can be discussed and customised before stitching.</p>
+        </div>
+        <div id="servicesGrid" class="grid3"></div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section soft">
+      <div class="container">
+        <div class="head">
+          <div>
+            <span class="eyebrow">Portfolio</span>
+            <h2>Recent work</h2>
+          </div>
+          <button class="btn ghost" type="button" onclick="openAdmin()">Manage portfolio</button>
+        </div>
+        <div id="galleryGrid" class="gallery"></div>
+      </div>
+    </section>
+
+    <section id="booking" class="section booking">
+      <div class="container booking-grid">
+        <div class="booking-copy">
+          <span class="eyebrow">Book / enquire</span>
+          <h2>Tell us what you want.</h2>
+          <p>Send your requirements. We'll confirm the design, price, measurements and delivery/collection date.</p>
+
+          <div class="mini">
+            <b>Tip</b>
+            <span>Have an Instagram/Pinterest design? Save it and attach it to your enquiry.</span>
+          </div>
+        </div>
+
+        <form id="bookingForm" class="form" novalidate>
+          <div class="row">
+            <label>
+              Name
+              <input required name="name" placeholder="Customer name">
+            </label>
+            <label>
+              Phone
+              <input required name="phone" placeholder="10-digit phone">
+            </label>
+          </div>
+
+          <div class="row">
+            <label>
+              Service
+              <select required name="service" id="serviceSelect"></select>
+            </label>
+            <label>
+              Needed by
+              <input type="date" name="date">
+            </label>
+          </div>
+
+          <label>
+            Details
+            <textarea required name="details" placeholder="Design, fabric, fitting, quantity, special requests..."></textarea>
+          </label>
+
+          <label>
+            Reference image
+            <input type="file" name="image" accept="image/*">
+          </label>
+
+          <button class="btn primary full" type="submit">Create Enquiry & WhatsApp</button>
+          <small>This demo saves the enquiry on this browser and opens WhatsApp for direct communication.</small>
+        </form>
+      </div>
+    </section>
+
+    <section id="track" class="section track">
+      <div class="container">
+        <div class="head">
+          <div>
+            <span class="eyebrow">Customer portal</span>
+            <h2>Track your order</h2>
+          </div>
+          <p>Enter the order ID given by Ruba Sri.</p>
+        </div>
+
+        <div class="trackbox">
+          <input id="trackId" placeholder="Example: RS1001" aria-label="Order ID">
+          <button class="btn primary" type="button" onclick="trackOrder()">Track</button>
+        </div>
+
+        <div id="trackResult"></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <span class="eyebrow">Ready?</span>
+        <h2>Bring your design to life.</h2>
+        <a class="btn light" id="waCta">Chat on WhatsApp ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <b>RUBA SRI</b>
+      <span>© <span id="year"></span> Ruba Sri Ladies Tailoring</span>
+      <span>Custom tailoring • Designer blouses • Bridal wear</span>
+    </div>
+  </footer>
+
+  <div id="adminModal" class="modal hidden">
+    <div class="panel">
+      <div class="paneltop">
+        <div>
+          <span class="eyebrow">Business dashboard</span>
+          <h2>Ruba Sri Admin</h2>
+        </div>
+        <button class="close" type="button" onclick="closeAdmin()">×</button>
+      </div>
+
+      <div class="tabs" aria-label="Admin tabs">
+        <button class="active" data-tab="dashboard" type="button">Dashboard</button>
+        <button data-tab="orders" type="button">Orders</button>
+        <button data-tab="customers" type="button">Customers</button>
+        <button data-tab="measurements" type="button">Measurements</button>
+        <button data-tab="backup" type="button">Backup</button>
+      </div>
+
+      <div id="adminContent"></div>
+    </div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

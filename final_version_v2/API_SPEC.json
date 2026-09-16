@@ -1,0 +1,39 @@
+{
+  "version": "2.0",
+  "base": "/api",
+  "resources": {
+    "orders": [
+      "GET /orders",
+      "POST /orders",
+      "PATCH /orders/:id",
+      "DELETE /orders/:id"
+    ],
+    "customers": [
+      "GET /customers",
+      "POST /customers",
+      "PATCH /customers/:id"
+    ],
+    "measurements": [
+      "GET /customers/:id/measurements",
+      "POST /customers/:id/measurements",
+      "PATCH /measurements/:id"
+    ],
+    "portfolio": [
+      "GET /portfolio",
+      "POST /portfolio",
+      "PATCH /portfolio/:id",
+      "DELETE /portfolio/:id"
+    ],
+    "auth": [
+      "POST /auth/login",
+      "POST /auth/logout"
+    ]
+  },
+  "orderStatus": [
+    "Enquiry",
+    "Confirmed",
+    "In Stitching",
+    "Ready",
+    "Completed"
+  ]
+}
